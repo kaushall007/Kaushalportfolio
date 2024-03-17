@@ -42,7 +42,7 @@
             <div class="home__data">
                 <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Kaushal</span><br>an Engineer</h1>
 
-                <a href="#" class="button">Contact</a>
+                <a href="#contact" class="button">Connect</a>
                 <a href="Resume-new.pdf" download="resume.pdf" class="button">Resume</a>
                 
                 
@@ -51,6 +51,8 @@
             <div class="home__social">
                 <a href="https://www.linkedin.com/in/kaushal-singh-8b35a1254" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
                 <a href="https://github.com/kaushall007" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                
+
             </div>
 
             <div class="home__img">
@@ -149,10 +151,15 @@
 
             <div class="contact__container bd-grid">
                 <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Send" class="contact__button button">
+                    <input type="text" id="name" placeholder="Name" class="contact__input">
+                    <input type="mail" id="email" placeholder="Email" class="contact__input">
+                    <textarea name="" id="message" cols="0" rows="10" class="contact__input"></textarea>
+                    <button type="submit" class="contact__button button">Send </button>
+                </form>
+
+                <div class="contact__info bd-grid">
+
+                </div>
                 </form>
             </div>
         </section>
@@ -176,5 +183,7 @@
 
     <!--===== MAIN JS =====-->
     <script src="script.js"></script>
+
+    
 </body>
 </html>
