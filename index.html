@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <!-- =====BOX ICONS===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'/>
     <link rel="stylesheet" href="https://www.bootstrapcdn.com/fontawesome/">
     <link rel="icon" type="image/png" href="favicon.png" sizes="50x50">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
     <title>Kaushal-portfolio</title>
@@ -40,10 +42,10 @@
         <!--===== HOME =====-->
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Kaushal</span><br>an Engineer</h1>
+                <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Kaushal</span><br>a Devloper</h1>
 
                 <a href="#contact" class="button">Connect</a>
-                <a href="Resume-new.pdf" download="resume.pdf" class="button">Resume</a>
+                <a href="https://docs.google.com/document/d/1RYOC_b0lWkWMiFZKWkzn8RO7FnzuUvk0Z6J1Utd-zKc/edit?usp=sharing" target="_blank" class="button">Resume</a>
                 
                 
             </div>
@@ -90,61 +92,106 @@
         <section class="skills section" id="skills">
             <h2 class="section-title">Skills</h2>
 
-            <div class="skills__container bd-grid">          
-                <div>
-                    <h2 class="skills__subtitle">Technology I  know:</h2>
-                    <p class="skills__text"></p>
-                    <div class="skill-logo">
-                        <img src="tech/html.png" >
-                    </div>
-                    <div class="skill-logo">
-                        <img src="tech/css.png" >
-                    </div>
-                    <div class="skill-logo">
-                        <img src="tech/js.png" >
-                    </div>
-                    <div class="skill-logo">
-                        <img src="tech/c.png">
-                    </div>
-                    <div class="skill-logo">
-                        <img src="tech/python.png">
-                    </div>
-                    <div class="skill-logo">
-                        <img src="tech/java.png">
-                    </div>
-                    <div class="skill-logo">
-                        <img src="tech/sql.png">
+            <div class="skills__container bd-grid">      
+                   
+                <div class="card" style="width:8rem;">
+                    <img src="tech/html.png" class="card-img-top" alt="CSS">
+                    <div class="card-body">
+                        <p class="card-text">HTML</p>
                     </div>
                 </div>
-            </div
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/css.png" class="card-img-top" alt="CSS">
+                    <div class="card-body">
+                        <p class="card-text">CSS</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/bootstrap.png" class="card-img-top" alt="Bootstrap">
+                    <div class="card-body">
+                        <p class="card-text">Bootstrap</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/js.png" class="card-img-top" alt="JavaScript">
+                    <div class="card-body">
+                        <p class="card-text">JavaScript</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/c.png" class="card-img-top" alt="C">
+                    <div class="card-body">
+                        <p class="card-text">C++</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/python.png" class="card-img-top" alt="Python">
+                    <div class="card-body">
+                        <p class="card-text">Python</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/java.png" class="card-img-top" alt="Java">
+                    <div class="card-body">
+                        <p class="card-text">Java</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 8rem;">
+                    <img src="tech/sql.png" class="card-img-top" alt="SQL">
+                    <div class="card-body">
+                        <p class="card-text">SQL</p>
+                    </div>
+                </div>
+            </div>
         </section>
-
+        
         <!--===== Project =====-->
         <section class="work section" id="work">
             <h2 class="section-title">Project</h2>
 
-            <div class="work__container bd-grid">
-                <a href="https://github.com/kaushall007/Driver-Drowsy-Detection" class="work__img">
-                    <img src="ddd.png" alt="">
-                </a>
-                <a href="https://github.com/kaushall007/calculator" class="work__img">
-                    <img src="Calculator.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="Bms.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="work4.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="work5.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="work6.jpg" alt="">
-                </a>
-            </div>
-        </section>
+            <div class="work__container bd-grid">    
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./project/ddd.png" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Driver Drowsy Detection</h1> 
+                    <p>Python, OpenCV</p> 
+                    <a href="https://github.com/kaushall007/Driver-Drowsy-Detection" class="work_link">github link</a>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./project/calculator.png" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Scientific Calculator</h1> 
+                    <p>Python, Tkinter</p> 
+                    <a href="https://github.com/kaushall007/Calculator" class="work_link">github link</a>
+                  </div>
+                </div>
+              </div>
 
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./project/chill.png" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Chillex (Movie Recommendation)</h1> 
+                    <p>HTML, CSS, JavaScript</p> 
+                    <a href="https://github.com/kaushall007/Chillex" class="work_link">github link</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </section>
+        
         <!--===== CONTACT =====-->
         <section class="contact section" id="contact">
             <h2 class="section-title">Contact</h2>
@@ -154,7 +201,7 @@
                     <input type="text" id="name" placeholder="Name" class="contact__input">
                     <input type="mail" id="email" placeholder="Email" class="contact__input">
                     <textarea name="" id="message" cols="0" rows="10" class="contact__input"></textarea>
-                    <button type="submit" class="contact__button button">Send </button>
+                    <button onclick="connect()" type="submit" class="contact__button button">Send </button>
                 </form>
 
                 <div class="contact__info bd-grid">
@@ -169,10 +216,10 @@
     <footer class="footer">
         <p class="footer__title">Kaushal</p>
         <div class="footer__social">
-            <a style="color: rgba(0, 68, 255, 0.877);" href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-            <a style="color:rgb(173, 37, 201)"href="https://www.instagram.com/kaushal.ll/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-            <a style="color: rgb(13, 104, 241);"href="https://twitter.com/07_kaushall" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-            <a aria-label="Chat on WhatsApp" style="color: green;" href="https://wa.me/7982125256"class="footer__icon"><i class='bx bxl-whatsapp' ></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://www.instagram.com/kaushal.ll/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+            <a href="https://twitter.com/07_kaushall" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            <a href="https://wa.me/7982125256" class="footer__icon"><i class='bx bxl-whatsapp' ></i></a>
         </div>
         <p class="footer__copy">&#169; Kaushaltech. All rights reserved</p>
     </footer>

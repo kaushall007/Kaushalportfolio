@@ -56,3 +56,39 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 /* Send Message */
+function connect(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+   
+    if  (name==="" || email==="" || message=="") {
+      alert("Please Fill All The Fields");
+    } else {
+        alert(`Hello ${name}, Your Message  has been sent successfully!`);
+    }
+    //Create the object to send the mail
+    var data = {
+      "misc": [
+          {"name":"Name", "value":name},
+          {"name":"E-mail","value":email},
+          {"name":"Message","value":message}
+      ]
+   };
+
+    $.ajax({
+        url:"https://api.sendinblue.com/v3/smtp/email",
+        type:"POST",
+        dataType:"json",
+        crossDomain:true,
+        headers:{
+            "Accept" : "application/json",
+            "Api-key" : "XWGUJHVYTQZKF5BPZ7D1",
+        },
+        data:JSON.stringify(data),
+        contentType:"application/json",
+        success: function (response) {
+           console.log('Email sent!');
+        }
+    });
+};
+

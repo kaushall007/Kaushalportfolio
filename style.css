@@ -1,5 +1,6 @@
-/*===== GOOGLE FONTS =====*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 
 /*===== VARIABLES CSS =====*/
 :root {
@@ -164,6 +165,10 @@ img {
 
 .nav__logo {
     color: var(--second-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(20, 76, 231);
 }
 
 .nav__toggle {
@@ -200,8 +205,10 @@ img {
 }
 
 .home__title {
-    font-size: var(--big-font-size);
+    font-size:55px;
+    font-weight: bold;
     margin-bottom: var(--mb-5);
+
 }
 
 .home__title-color {
@@ -248,6 +255,7 @@ img {
     font-weight: var(--font-semi);
     border-radius: .5rem;
     transition: all .3s;
+    text-decoration: none;
 }
 
 .button:hover {
@@ -263,10 +271,21 @@ img {
 
 .about__subtitle {
     margin-bottom: var(--mb-2);
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.about__text{
+    font-size: 12px;
+    font-family: monospace;
+    font-weight: bold;
 }
 
 .about__img {
     justify-self: center;
+    align-self: start;
+    height: auto;
+    max-width: 90%;
+    filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.25));
 }
 
 .about__img img {
@@ -274,42 +293,6 @@ img {
     border-radius: .5rem;
     box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.792);
 }
-
-/* ===== SKILLS =====*/
-.skills__container {
-    display: inline-block;
-}
-
-.skill-logo{
-    height: 5vh;
-    width: 5vw;
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-
-/* ===== WORK =====*/
-.work__container {
-    row-gap: 2rem;
-}
-
-.work__img {
-    box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.792);
-    border-radius: .5rem;
-    overflow: hidden;
-}
-
-.work__img img {
-    transition: 1s;
-}
-
-.work__img img:hover {
-    transform: scale(1.1);
-}
-
-
 
 /* ===== CONTACT =====*/
 .contact__input {
@@ -404,11 +387,6 @@ img {
         align-items: center;
         text-align: initial;
     }
-    .skills__container {
-        grid-template-columns: .7fr;
-        justify-content: center;
-        column-gap: 1rem;
-    }
     .work__container {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
@@ -448,12 +426,15 @@ img {
     .nav__item {
         margin-left: var(--mb-6);
         margin-bottom: 0;
+        outline: none;
+        text-decoration:none;
     }
     .nav__toggle {
         display: none;
     }
     .nav__link {
         color: var(--second-color);
+        text-decoration: none;
     }
     .home {
         padding: 8rem 0 2rem;
@@ -491,4 +472,107 @@ img {
     .home__img {
         width: 450px;
     }
+}
+.skills {
+    padding: 40px ; /* Adjust padding as needed */
+   /*  background-color: red; */
+  }
+  .section-title {
+    text-align: center; /* Center align the section title */
+    margin-bottom: 30px; /* Add space below the title */
+  }
+  
+  /* Styles for the skills container */
+  .skills__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+  }
+ .card{
+    margin: 5px;
+ }
+ .card-img-top{
+    background-color: #0f67af6c;
+ }
+.card-body{
+    background-color: #0f67af6c;
+    font-size: 12px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+/*project*/
+.work__container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to keep them in a single line */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.flip-card {
+    margin: 10px;
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    border-radius: 35px;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  cursor:pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  transition:1.2s;
+  
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+    transition:1.2s;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+    transition:1.2s;
+}
+
+.flip-card-back {
+  background-color: #494644;
+  color: white;
+  transform: rotateY(180deg);
+    transition:1.2s;
+}
+.work_link{
+    text-decoration: none;
+    
+}
+
+.flip-card-back h1{
+    color: rgba(255, 255, 255, 0.39);
+    font-size: 20px;
+    font-display:  block;
+    margin: auto;
+    padding-top: 30px;
+    line-height: 1.5;
+    max-width: 80%;
+}
+.flip-card-back p {
+    font-size: 16px;
+    color: #ffffff;
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
