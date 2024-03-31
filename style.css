@@ -490,7 +490,15 @@ img {
   }
  .card{
     margin: 5px;
+    cursor: pointer;
  }
+ .card:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+    box-shadow: rgba(60, 64, 67,  0.316) 0px 8px 15px,-rgba(60, 64, 67,  0.288)  0px -8px 0px, rgba(60, 64,  67, 0.316);
+    background-color: #47555a;
+}
+
  .card-img-top{
     background-color: #0f67af6c;
  }
@@ -500,6 +508,7 @@ img {
     text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+
 }
 /*project*/
 .work__container {
@@ -575,4 +584,8 @@ img {
     color: #ffffff;
     padding-top: 10px;
     margin-bottom: 10px;
+}
+.flip-card-front img{
+    height: 350px;
+    width: 350px;
 }
