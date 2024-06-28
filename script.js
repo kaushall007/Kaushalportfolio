@@ -27,16 +27,18 @@ const sections = document.querySelectorAll('section[id]')
 function scrollActive(){
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
-        }
+        document.querySelectorAll('.nav__menu a[href*=' + sectionId + ']').forEach(link => {
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                link.classList.add('active')
+            }else{
+                link.classList.remove('active')
+            }
+        })
     })
 }
 window.addEventListener('scroll', scrollActive)
@@ -56,39 +58,53 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 /* Send Message */
-function connect(){
+// Modify the connect function to handle form submission
+function connect(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let message = document.getElementById("message").value;
-   
-    if  (name==="" || email==="" || message=="") {
-      alert("Please Fill All The Fields");
+
+    if (name === "" || email === "" || message === "") {
+        alert("Please Fill All The Fields");
     } else {
-        alert(`Hello ${name}, Your Message  has been sent successfully!`);
+        fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer <YOUR_AUTH_TOKEN>'
+            },
+            body: JSON.stringify({ name, email, message })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to submit form');
+                }
+                return response.json();
+            })
+            .then(_data => {
+                // Display a success message using a modal or a toast
+                const successMessage = document.createElement('div');
+                successMessage.classList.add('success-message');
+                successMessage.textContent = `Hello ${name}, Your Message has been sent successfully!`;
+                document.body.appendChild(successMessage);
+                setTimeout(() => {
+                    document.body.removeChild(successMessage);
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+                // Display an error message using a modal or a toast
+                const errorMessage = document.createElement('div');
+                errorMessage.classList.add('error-message');
+                errorMessage.textContent = `An error occurred while submitting the form: ${error.message}`;
+                document.body.appendChild(errorMessage);
+                setTimeout(() => {
+                    document.body.removeChild(errorMessage);
+                }, 3000);
+            });
     }
-    //Create the object to send the mail
-    var data = {
-      "misc": [
-          {"name":"Name", "value":name},
-          {"name":"E-mail","value":email},
-          {"name":"Message","value":message}
-      ]
-   };
-
-    $.ajax({
-        url:"https://api.sendinblue.com/v3/smtp/email",
-        type:"POST",
-        dataType:"json",
-        crossDomain:true,
-        headers:{
-            "Accept" : "application/json",
-            "Api-key" : "XWGUJHVYTQZKF5BPZ7D1",
-        },
-        data:JSON.stringify(data),
-        contentType:"application/json",
-        success: function (response) {
-           console.log('Email sent!');
-        }
-    });
-};
-
+}
+// Bind connect function to the form submission event
+document.querySelector(".contact__form").addEventListener("submit", connect);
