@@ -57,54 +57,16 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
-/* Send Message */
-// Modify the connect function to handle form submission
-function connect(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    if (name === "" || email === "" || message === "") {
-        alert("Please Fill All The Fields");
-    } else {
-        fetch('/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer <YOUR_AUTH_TOKEN>'
-            },
-            body: JSON.stringify({ name, email, message })
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to submit form');
-                }
-                return response.json();
-            })
-            .then(_data => {
-                // Display a success message using a modal or a toast
-                const successMessage = document.createElement('div');
-                successMessage.classList.add('success-message');
-                successMessage.textContent = `Hello ${name}, Your Message has been sent successfully!`;
-                document.body.appendChild(successMessage);
-                setTimeout(() => {
-                    document.body.removeChild(successMessage);
-                }, 3000);
-            })
-            .catch(error => {
-                console.error('Error:', error.message);
-                // Display an error message using a modal or a toast
-                const errorMessage = document.createElement('div');
-                errorMessage.classList.add('error-message');
-                errorMessage.textContent = `An error occurred while submitting the form: ${error.message}`;
-                document.body.appendChild(errorMessage);
-                setTimeout(() => {
-                    document.body.removeChild(errorMessage);
-                }, 3000);
-            });
-    }
+function openModal(event) {
+    event.preventDefault();
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = event.currentTarget.href;
 }
-// Bind connect function to the form submission event
-document.querySelector(".contact__form").addEventListener("submit", connect);
+
+function closeModal() {
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+}
