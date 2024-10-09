@@ -512,7 +512,6 @@ img {
 }
 /*project*/
 .work__container {
-    display: flex;
     flex-wrap: nowrap; /* Prevent wrapping to keep them in a single line */
     overflow-x: auto; /* Enable horizontal scrolling if needed */
 }
